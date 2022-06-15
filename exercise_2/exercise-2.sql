@@ -1,8 +1,10 @@
 -- find all rental dates for customers with the first_name Patricia
 -- use INNER JOIN FROM customer onto rental
 
-Drop table if exists city;
-Drop table if exists address;
+SELECT rental.rental_id, rental.rental_date
+FROM rental 
+INNER JOIN customer
 
-SELECT 
+ON rental.customer_id = customer.customer_id
 
+WHERE first_name = 'Patricia'
